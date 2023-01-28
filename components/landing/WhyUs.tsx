@@ -12,7 +12,7 @@ const WhyUs = (props: Props) => {
 
       <div className="flex flex-col md:flex-row justify-evenly py-[1em]">
         <div className="block p-3 md:p-6 max-w-sm py-4  rounded-xl">
-          <FaRegFileAlt className="text-5xl mx-auto mb-7 text-blue-600" />
+          <FaRegFileAlt className="text-5xl mx-auto mb-7 text-blue-500" />
           <h5 className="text-slate-900 font-semibold text-lg text-center">
             Scheduled Tasks
           </h5>
@@ -21,8 +21,8 @@ const WhyUs = (props: Props) => {
             accusamus?
           </p>
         </div>
-        <div className="block p-3 md:p-6 max-w-sm py-4 shadow-none md:shadow-xl rounded-xl">
-          <FaRegGem className="text-5xl mx-auto mb-7 text-blue-600" />
+        <div className="block p-3 md:p-6 max-w-sm py-4 shadow-none md:shadow-md rounded-xl">
+          <FaRegGem className="text-5xl mx-auto mb-7 text-blue-500" />
           <h5 className="text-slate-900 font-semibold text-lg text-center">
             Scheduled Tasks
           </h5>
@@ -32,7 +32,7 @@ const WhyUs = (props: Props) => {
           </p>
         </div>
         <div className="block p-3 md:p-6 max-w-sm py-4 rounded-xl">
-          <FaRegFolderOpen className="text-5xl mx-auto mb-7 text-blue-600" />
+          <FaRegFolderOpen className="text-5xl mx-auto mb-7 text-blue-500" />
           <h5 className="text-slate-900 font-semibold text-lg text-center">
             Scheduled Tasks
           </h5>

@@ -6,6 +6,7 @@ import WhyUs from "@/components/landing/WhyUs";
 import About from "@/components/landing/About";
 import Newsletter from "@/components/landing/Newsletter";
 import Footer from "@/components/landing/Footer";
+import Build from "@/components/landing/Build";
 export default function Home() {
   return (
     <>
@@ -23,6 +24,7 @@ export default function Home() {
           <WhyUs />
           <Newsletter />
         </div>
+        <Build />
         <Footer />
       </main>
     </>

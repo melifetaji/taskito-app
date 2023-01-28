@@ -12,7 +12,7 @@ const Button = ({ children, className, type, size }: Props) => {
   let btnSize = size === "large" ? "px-8 py-4 text-xl" : "";
   return (
     <div
-      className={`max-w-fit inline-block px-4 py-2 ${background} hover:bg-blue-700 rounded-lg text-white ${btnSize} ${className}`}
+      className={`cursor-pointer max-w-fit inline-block px-4 py-2 ${background} hover:bg-blue-700 rounded-lg text-white ${btnSize} ${className}`}
     >
       {children}
     </div>
