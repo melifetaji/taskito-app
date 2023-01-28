@@ -14,11 +14,8 @@ const Build = (props: Props) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nemo
           doloremque nam commodi reiciendis. Accusantium?
         </p>
-        <Button
-          className="px-6 py-2 hover:bg-gradient-to-r from-violet-600 to-orange-400 box-border border-2 border-transparent hover:border-violet-700"
-          type="black"
-        >
-          Get started for free
+        <Button className="px-6 py-2 text-lg" type="black" hover={true}>
+          Get started for free &gt;
         </Button>
       </div>
     </div>

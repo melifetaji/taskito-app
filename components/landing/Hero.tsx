@@ -7,7 +7,6 @@ type Props = {};
 const Hero = (props: Props) => {
   return (
     <div className="">
-      {/* bg-[url('../public/Hero_1.png') rounded-2xl] */}
       <div className="container mx-auto border-[2px] border-blue-200 bg-neutral-50 shadow-lg rounded-2xl flex flex-col md:flex-row my-8 p-[2em] ">
         <div className="flex justify-center flex-col ml-0 md:ml-10">
           <h1 className="text-6xl font-semibold md:text-8xl text-slate-900">
@@ -24,12 +23,10 @@ const Hero = (props: Props) => {
             nisi rerum quis atque non nam magni dolores ab assumenda nesciunt!
           </p>
           <div className="flex flex-row">
-            <Button type="primary" size="medium" className="mr-3">
+            <Button type="primary" size="medium" className="mr-3" hover={true}>
               Get Started
             </Button>
-            <Button type="secondary" size="medium">
-              Learn More
-            </Button>
+            <Button size="medium">Learn More</Button>
           </div>
         </div>
         <div className="hidden md:block">
