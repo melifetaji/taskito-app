@@ -11,8 +11,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Taskito</title>
+        <title>Taskito - Task Manager</title>
         <meta name="description" content="Manage your daily tasks." />
+        <meta
+          name="keywords"
+          content="Task Manager, App, Productivity, Schedule, To-Do List, Goals, Organization, Time Management, Prioritization, Deadlines, Collaboration, Cloud-Based, Mobile-Friendly."
+        ></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
