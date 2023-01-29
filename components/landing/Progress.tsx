@@ -1,14 +1,22 @@
 import React from "react";
 import Card from "../utils/GradientCard";
+import { motion } from "framer-motion";
+
 type Props = {};
 
 const Progress = (props: Props) => {
   return (
     <section className="container mx-auto md:px-0">
       <div className="font-semibold my-[1.5em] text-center">
-        <p className="uppercase text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-400">
+        <motion.p
+          className="uppercase text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-400"
+          animate={{ scale: [1.0, 1.03, 1.0] }}
+          transition={{
+            repeat: Infinity,
+          }}
+        >
           We Save Your Time
-        </p>
+        </motion.p>
         <h3 className="text-4xl font-bold text-slate-900">
           Say goodbye to missed deadlines
         </h3>
