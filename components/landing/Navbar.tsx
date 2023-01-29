@@ -7,12 +7,22 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useState, useRef, useEffect } from "react";
 
 const Navbar = () => {
-  let [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scroll, setScroll] = useState<string>("transparent");
   const menuRef = useRef<HTMLDivElement>(null);
   const handleClick = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen);
   };
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.scrollY > 20) {
+        setScroll("bg-[#fcfcfc] shadow-md");
+      } else {
+        setScroll("bg-transparent");
+      }
+    };
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -28,16 +38,18 @@ const Navbar = () => {
 
   return (
     // TODO make navbar fixed, change bg on scroll
-    <nav>
-      <div className="px-[10em] border-gray-200 hidden md:block">
+    <nav className="fixed w-[100%] top-0">
+      <div className={`px-[10em] border-gray-200 hidden md:block ${scroll}`}>
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
-          <Image
-            src="/Logo.svg"
-            alt=""
-            width={130}
-            height={100}
-            className="cursor-pointer"
-          />
+          <Link href="/">
+            <Image
+              src="/Logo.svg"
+              alt=""
+              width={130}
+              height={100}
+              className="cursor-pointer"
+            />
+          </Link>
           <ul>
             <li className="inline-block px-4 py-2 text-gray-700 hover:text-gray-900">
               <Link href="/">Home</Link>
@@ -55,7 +67,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`block md:hidden`}>
+      <div className={`block md:hidden ${scroll}`}>
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <Image src="/Logo.svg" alt="" width={130} height={100} />
           <button onClick={handleClick}>

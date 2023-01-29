@@ -41,7 +41,7 @@ const About = (props: Props) => {
         </div>
       </div>
       <hr className="my-10 md:my-0" />
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 order-last">
         <div className="flex flex-col justify-center  max-w-100% md:max-w-[80%] justify-self-end">
           <h5 className="text-sm uppercase text-blue-600 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-400">
             Choose For Yourself
@@ -65,13 +65,7 @@ const About = (props: Props) => {
             READ MORE &gt;
           </Link>
         </div>
-        <Image
-          src="/3D3.png"
-          width={700}
-          height={700}
-          alt="About Us"
-          className="hidden md:block rounded-2xl"
-        />
+        <Image src="/3D3.png" width={700} height={700} alt="About Us" />
       </div>
     </div>
   );

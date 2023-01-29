@@ -15,9 +15,9 @@ export default function Home() {
         <meta name="description" content="Manage your daily tasks." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="bg-[#fcfcfc]">
+      <main>
         <Navbar />
-        <div className="px-4 md:px-0">
+        <div className="px-4 md:px-0 mt-[5em]">
           <Hero />
           <Progress />
           <About />

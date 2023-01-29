@@ -21,7 +21,7 @@ const WhyUs = (props: Props) => {
             accusamus?
           </p>
         </div>
-        <div className="block p-3 md:p-6 max-w-sm py-4 shadow-none md:shadow-md rounded-xl">
+        <div className="block p-3 md:p-6 max-w-sm py-4 shadow-none md:shadow-md rounded-xl border-[1px] border-gray-50">
           <FaRegGem className="text-5xl mx-auto mb-7 text-blue-500" />
           <h5 className="text-slate-900 font-semibold text-lg text-center">
             Scheduled Tasks
