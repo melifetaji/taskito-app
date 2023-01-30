@@ -23,7 +23,7 @@ const Newsletter = (props: Props) => {
             placeholder="john@gmail.com"
             className="p-2 rounded-md w-[100%] relative my-3 border-2 "
           />
-          <Button type="primary" className="ml-2 w-[100%]">
+          <Button type="primary" className="ml-2 w-[100%] p-2">
             Enter
           </Button>
         </form>
