@@ -17,7 +17,7 @@ const About = (props: Props) => {
             className="hidden md:block rounded-2xl"
           />
           <div className="flex flex-col justify-center max-w-100% md:max-w-[80%]">
-            <h5 className="text-sm uppercase text-blue-600 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-400">
+            <h5 className="text-sm uppercase text-blue-600 font-semibold text-gradient">
               About Us
             </h5>
 
@@ -45,7 +45,7 @@ const About = (props: Props) => {
       <TextInWhenVisible>
         <div className="grid grid-cols-1 md:grid-cols-2 order-last">
           <div className="flex flex-col justify-center  max-w-100% md:max-w-[80%] justify-self-end">
-            <h5 className="text-sm uppercase text-blue-600 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-400">
+            <h5 className="text-sm uppercase text-blue-600 font-semibold text-gradient">
               Choose For Yourself
             </h5>
 

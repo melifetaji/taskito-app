@@ -6,8 +6,8 @@ type Props = {};
 
 const AboutMain = (props: Props) => {
   return (
-    <div className="">
-      <div className="container mx-auto border-[2px] border-blue-200 bg-neutral-50 shadow-lg rounded-2xl flex flex-col md:flex-row p-[2em] bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 h-[90vh]">
+    <div>
+      <div className="container mx-auto border-[2px] border-blue-200 bg-neutral-50 shadow-lg rounded-2xl flex flex-col md:flex-row p-[2em] bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
         <div className="flex justify-center flex-col ml-0 md:ml-10">
           <FadeInLeft>
             <h1 className="text-6xl font-semibold md:text-8xl text-zinc-200">
@@ -19,7 +19,7 @@ const AboutMain = (props: Props) => {
             </p>
           </FadeInLeft>
         </div>
-        <div>
+        <div className="flex justify-center items-center">
           <FadeInRight>
             <Image src="/3Ddark1.png" width={1000} height={1000} alt="Image" />
           </FadeInRight>

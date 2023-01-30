@@ -96,13 +96,13 @@ const Navbar = ({ animate }: Props) => {
               transition={{ duration: 0.3 }}
             >
               {isOpen ? (
-                <HiX className="text-3xl text-blue-900 cursor-pointer" />
+                <HiX className="text-3xl text-neutral-700 cursor-pointer" />
               ) : (
-                <HiOutlineMenuAlt3 className="text-3xl text-blue-900 cursor-pointer" />
+                <HiOutlineMenuAlt3 className="text-3xl text-neutral-700 cursor-pointer" />
               )}
             </motion.div>
           </button>
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {isOpen && (
               <motion.div
                 initial={{ opacity: 0, x: 200 }}
