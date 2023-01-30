@@ -10,7 +10,7 @@ const AboutMain = (props: Props) => {
       <div className="container mx-auto border-[2px] border-blue-200 bg-neutral-50 shadow-lg rounded-2xl flex flex-col md:flex-row p-[2em] bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
         <div className="flex justify-center flex-col ml-0 md:ml-10">
           <FadeInLeft>
-            <h1 className="text-6xl font-semibold md:text-8xl text-zinc-200">
+            <h1 className="text-6xl font-semibold md:text-8xl text-zinc-100">
               What makes us different?
             </h1>
             <p className="text-lg py-5 max-w-[80%] text-zinc-200">
