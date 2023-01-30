@@ -42,7 +42,7 @@ const About = (props: Props) => {
         </div>
       </TextInWhenVisible>
       <hr className="my-10 md:my-0" />
-      <TextInWhenVisible delay={0.5}>
+      <TextInWhenVisible>
         <div className="grid grid-cols-1 md:grid-cols-2 order-last">
           <div className="flex flex-col justify-center  max-w-100% md:max-w-[80%] justify-self-end">
             <h5 className="text-sm uppercase text-blue-600 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-400">

@@ -2,12 +2,13 @@ import React from "react";
 import Button from "../utils/Button";
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <div className="">
-      <div className="container mx-auto border-[2px] border-blue-200 bg-neutral-50 shadow-lg rounded-2xl flex flex-col md:flex-row my-8 p-[2em] ">
+    <div>
+      <div className="container mx-auto border-[2px] border-blue-200 bg-neutral-50 shadow-lg rounded-2xl flex flex-col md:flex-row my-8 p-[2em] bg-gradient-to-br from-red-50 to-blue-100">
         <div className="flex justify-center flex-col ml-0 md:ml-10">
           <motion.h1
             className="text-6xl font-semibold md:text-8xl text-slate-900"
@@ -35,10 +36,10 @@ const Hero = (props: Props) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <Button type="primary" size="medium" className="mr-3" hover={true}>
+            <Button type="primary" size="large" className="mr-3" hover={true}>
               Get Started
             </Button>
-            <Button size="medium">Learn More</Button>
+            <Button size="large">Learn More</Button>
           </motion.div>
         </div>
         <div className="hidden md:block">
@@ -47,8 +48,8 @@ const Hero = (props: Props) => {
       </div>
       <Image
         src="/3D.png"
-        width={2000}
-        height={2000}
+        width={1000}
+        height={1000}
         alt=""
         className="block md:hidden"
       />

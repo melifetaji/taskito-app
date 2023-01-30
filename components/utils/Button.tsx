@@ -10,11 +10,12 @@ type Props = {
 
 const Button = ({ children, className, type, size, hover }: Props) => {
   let background = "bg-black";
+
   if (type === "primary") {
     background = "bg-blue-600";
   }
 
-  const btnSize = size === "large" ? "px-8 py-4 text-xl" : "";
+  const btnSize = size === "large" ? "px-6 py-3 md:text-lg" : "";
   return (
     <button
       className={`cursor-pointer max-w-fit inline-block px-4 py-2 ${background}  rounded-lg text-white ${btnSize} ${

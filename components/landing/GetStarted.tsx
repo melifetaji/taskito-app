@@ -3,7 +3,7 @@ import Button from "../utils/Button";
 
 type Props = {};
 
-const Build = (props: Props) => {
+const GetStarted = (props: Props) => {
   return (
     <div className="bg-[url('/BG.svg')] bg-no-repeat bg-cover min-h-[35em] flex justify-center items-center">
       <div className="container mx-auto flex-col p-4 md:max-w-[55%] flex justify-center items-center">
@@ -14,7 +14,12 @@ const Build = (props: Props) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nemo
           doloremque nam commodi reiciendis. Accusantium?
         </p>
-        <Button className="px-6 py-2 text-lg" type="black" hover={true}>
+        <Button
+          className="px-6 py-2 text-lg"
+          type="black"
+          size="large"
+          hover={true}
+        >
           Get started for free &gt;
         </Button>
       </div>
@@ -22,4 +27,4 @@ const Build = (props: Props) => {
   );
 };
 
-export default Build;
+export default GetStarted;

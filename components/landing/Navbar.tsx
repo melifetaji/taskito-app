@@ -7,7 +7,11 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Navbar = () => {
+type Props = {
+  animate?: boolean;
+};
+
+const Navbar = ({ animate }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scroll, setScroll] = useState<string>("transparent");
   const menuRef = useRef<HTMLDivElement>(null);
@@ -40,8 +44,8 @@ const Navbar = () => {
   return (
     <motion.nav
       className="fixed w-[100%] top-0 z-10"
-      initial={{ opacity: 0, y: -60 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={animate && { opacity: 0, y: -60 }}
+      animate={animate && { opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
       <div className={`px-[10em] border-gray-200 hidden md:block ${scroll}`}>
@@ -50,7 +54,7 @@ const Navbar = () => {
             <Image
               src="/Logo.svg"
               alt=""
-              width={130}
+              width={150}
               height={100}
               className="cursor-pointer"
             />
@@ -61,7 +65,7 @@ const Navbar = () => {
               <Link href="/">Home</Link>
             </li>
             <li className="inline-block px-4 py-2 text-gray-700 hover:text-gray-900">
-              <Link href="/">About Us</Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li className="inline-block px-4 py-2 text-gray-700 hover:text-gray-900">
               <Link href="/">Contact</Link>
@@ -75,11 +79,20 @@ const Navbar = () => {
 
       <div className={`block md:hidden ${scroll}`}>
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
-          <Image src="/Logo.svg" alt="" width={130} height={100} />
+          <Link href="/">
+            <Image
+              src="/Logo.svg"
+              alt=""
+              width={130}
+              height={100}
+              className="cursor-pointer"
+            />
+          </Link>
+
           <button onClick={handleClick}>
             <motion.div
               initial={{ rotate: 0 }}
-              animate={{ rotate: isOpen ? 90 : 0 }}
+              animate={{ rotate: isOpen ? 180 : 0 }}
               transition={{ duration: 0.3 }}
             >
               {isOpen ? (
@@ -101,13 +114,19 @@ const Navbar = () => {
               >
                 <ul>
                   <li className="px-4 py-2 text-gray-700 hover:text-gray-900 ">
-                    <Link href="/">Home</Link>
+                    <Link href="/" onClick={() => setIsOpen(false)}>
+                      Home
+                    </Link>
                   </li>
                   <li className="px-4 py-2 text-gray-700 hover:text-gray-900">
-                    <Link href="/">About Us</Link>
+                    <Link href="/about" onClick={() => setIsOpen(false)}>
+                      About Us
+                    </Link>
                   </li>
                   <li className="px-4 py-2 text-gray-700 hover:text-gray-900 ">
-                    <Link href="/">Contact</Link>
+                    <Link href="/" onClick={() => setIsOpen(false)}>
+                      Contact
+                    </Link>
                   </li>
                   <li>
                     <Button type="primary" hover={true}>
