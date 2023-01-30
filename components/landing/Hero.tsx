@@ -14,7 +14,7 @@ const Hero = (props: Props) => {
             className="text-6xl font-semibold md:text-8xl text-slate-900"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           >
             Get more done in <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-400">
@@ -25,7 +25,7 @@ const Hero = (props: Props) => {
             className="text-lg py-5 max-w-[80%] text-slate-700"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           >
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
             nisi rerum quis atque non nam magni dolores ab assumenda nesciunt!

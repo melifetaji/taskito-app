@@ -6,7 +6,7 @@ type Props = {};
 const Footer = (props: Props) => {
   const router = useRouter();
 
-  if (router.pathname === "/about") {
+  if (router.pathname === "/about" || "/contact") {
     return null;
   }
   return (

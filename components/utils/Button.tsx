@@ -15,10 +15,11 @@ const Button = ({ children, className, type, size, hover }: Props) => {
     background = "bg-blue-600";
   }
 
-  const btnSize = size === "large" ? "px-6 py-3 md:text-lg" : "";
+  const btnSize =
+    size === "large" ? "px-6 py-3 md:text-lg" : "ml-3 py-1 px-2 md:p-2 ";
   return (
     <button
-      className={`cursor-pointer max-w-fit inline-block px-4 py-2 ${background}  rounded-lg text-white ${btnSize} ${
+      className={`cursor-pointer max-w-fit inline-block ${background}  rounded-lg text-white ${btnSize} ${
         hover
           ? " hover:bg-gradient-to-r from-blue-600 to-violet-800 "
           : "hover:bg-blue-700"

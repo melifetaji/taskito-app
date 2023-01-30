@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Main from "@/components/landing/about/AboutMain";
+import AboutMain from "@/components/landing/about/AboutMain";
 export default function Home() {
   return (
     <>
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <main>
         <div className="px-4 md:px-0 mt-[5em]">
-          <Main />
+          <AboutMain />
         </div>
       </main>
     </>
