@@ -19,10 +19,11 @@ const AboutMain = (props: Props) => {
             </p>
           </FadeInLeft>
         </div>
-
-        <FadeInRight>
-          <Image src="/3Ddark1.png" width={1000} height={1000} alt="Image" />
-        </FadeInRight>
+        <div>
+          <FadeInRight>
+            <Image src="/3Ddark1.png" width={1000} height={1000} alt="Image" />
+          </FadeInRight>
+        </div>
       </div>
     </div>
   );

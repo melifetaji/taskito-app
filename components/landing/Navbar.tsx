@@ -65,7 +65,7 @@ const Navbar = ({ animate }: Props) => {
               <Link href="/">Home</Link>
             </li>
             <li className="inline-block px-4 py-2 text-gray-700 hover:text-gray-900">
-              <Link href="/about">About Us</Link>
+              <Link href="/about">About</Link>
             </li>
             <li className="inline-block px-4 py-2 text-gray-700 hover:text-gray-900">
               <Link href="/contact">Contact</Link>
@@ -120,7 +120,7 @@ const Navbar = ({ animate }: Props) => {
                   </li>
                   <li className="px-4 py-2 text-gray-700 hover:text-gray-900">
                     <Link href="/about" onClick={() => setIsOpen(false)}>
-                      About Us
+                      About
                     </Link>
                   </li>
                   <li className="px-4 py-2 text-gray-700 hover:text-gray-900 ">
