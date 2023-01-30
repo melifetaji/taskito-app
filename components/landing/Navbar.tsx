@@ -109,28 +109,47 @@ const Navbar = ({ animate }: Props) => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -200 }}
                 transition={{ duration: 0.2 }}
-                className="w-full absolute left-0 top-[55px] p-5 text-lg border-2 rounded-xl shadow-lg bg-white "
+                className="w-full absolute left-0 top-[55px] text-lg border-2 rounded-xl shadow-lg bg-white "
                 ref={menuRef}
               >
                 <ul>
-                  <li className="px-4 py-2 text-gray-700 hover:text-gray-900 ">
-                    <Link href="/" onClick={() => setIsOpen(false)}>
+                  <li>
+                    <Link
+                      href="/"
+                      onClick={() => setIsOpen(false)}
+                      className="p-4 text-gray-700 hover:text-gray-900 w-full block text-center border-y"
+                    >
                       Home
                     </Link>
                   </li>
-                  <li className="px-4 py-2 text-gray-700 hover:text-gray-900">
-                    <Link href="/about" onClick={() => setIsOpen(false)}>
+                  <li>
+                    <Link
+                      href="/about"
+                      onClick={() => setIsOpen(false)}
+                      className="p-4 text-gray-700 hover:text-gray-900 w-full block text-center border-b"
+                    >
                       About
                     </Link>
                   </li>
-                  <li className="px-4 py-2 text-gray-700 hover:text-gray-900 ">
-                    <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  <li>
+                    <Link
+                      href="/contact"
+                      onClick={() => setIsOpen(false)}
+                      className="p-4 text-gray-700 hover:text-gray-900 w-full block text-center border-b mb-4"
+                    >
                       Contact
                     </Link>
                   </li>
-                  <li>
-                    <Button type="primary" hover={true} size="medium">
-                      <Link href="/dashboard">Get Started &gt;</Link>
+                  <li className="flex justify-center mb-4">
+                    <Button
+                      type="primary"
+                      hover={true}
+                      size="medium"
+                      className="block w-full"
+                    >
+                      <Link href="/dashboard" className="w-full block">
+                        Get Started &gt;
+                      </Link>
                     </Button>
                   </li>
                 </ul>
