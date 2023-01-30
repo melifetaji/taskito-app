@@ -9,7 +9,6 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      {/* #TODO - animate on route change */}
       <Navbar animate={true} />
       {children}
       <Footer />

@@ -109,10 +109,10 @@ const Navbar = ({ animate }: Props) => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -200 }}
                 transition={{ duration: 0.2 }}
-                className="w-full absolute left-0 top-[55px] text-lg border-2 rounded-xl shadow-lg bg-white "
+                className="w-full absolute left-0 top-[55px] text-lg border-2 rounded-b-3xl shadow-lg bg-white "
                 ref={menuRef}
               >
-                <ul>
+                <ul className="uppercase font-semibold">
                   <li>
                     <Link
                       href="/"
