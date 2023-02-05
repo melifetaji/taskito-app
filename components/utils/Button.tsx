@@ -11,9 +11,15 @@ type Props = {
 const Button = ({ children, className, type, size, hover }: Props) => {
   let background = "bg-black";
 
+  // const variant = {
+  //   primary: "bg-blue-500 text-white",
+  //   secondary: "bg-green-500 text-white",
+  // };
+
   if (type === "primary") {
     background = "bg-blue-600";
   }
+
   let btnSize = null;
 
   if (size === "large") {
@@ -24,7 +30,7 @@ const Button = ({ children, className, type, size, hover }: Props) => {
 
   return (
     <button
-      className={`cursor-pointer max-w-fit inline-block ${background}  rounded-lg text-white ${btnSize} ${
+      className={`cursor-pointer max-w-fit inline-block rounded-lg ${background}   text-white ${btnSize} ${
         hover
           ? " hover:bg-gradient-to-r from-blue-600 to-violet-800 "
           : "hover:bg-blue-700"

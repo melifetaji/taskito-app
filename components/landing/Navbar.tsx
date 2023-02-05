@@ -71,7 +71,7 @@ const Navbar = ({ animate }: Props) => {
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
-          <Button type="primary" hover={true}>
+          <Button type="primary" size="medium" hover={true}>
             <Link href="/" className="px-2 py-1">
               Get Started &gt;
             </Link>
