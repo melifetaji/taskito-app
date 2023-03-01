@@ -11,7 +11,7 @@ type Props = {};
 const Hero = (props: Props) => {
   return (
     <div>
-      <div className="container mx-auto border-[2px] border-blue-200 bg-neutral-50 shadow-lg rounded-2xl flex flex-col md:flex-row my-8 p-[2em] bg-gradient-to-br from-red-50 to-blue-100">
+      <div className="container mx-auto md:mt-[8em] border-[2px] border-blue-200 bg-neutral-50 shadow-lg rounded-2xl flex flex-col md:flex-row my-8 p-[2em] bg-gradient-to-br from-red-50 to-blue-100">
         <div className="flex justify-center flex-col ml-0 md:ml-10">
           <FadeInLeft>
             <h1 className="text-6xl font-semibold md:text-8xl text-slate-900">
