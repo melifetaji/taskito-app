@@ -11,16 +11,23 @@ type Props = {};
 const Register = (props: Props) => {
 	const router = useRouter();
 
+	const URL =
+		process.env.NODE_ENV === "production"
+			? "https://taskito-app.vercel.app/"
+			: "http://localhost:3000";
+
 	const onSubmit = async (values: any) => {
 		const options = {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(values),
 		};
-		await fetch("/api/auth/signup", options)
+
+		await fetch(`${URL}/api/auth/signup`, options)
 			.then((res) => res.json())
 			.then(() => router.push("/login"));
 	};
+
 	const formik = useFormik({
 		initialValues: {
 			username: "",
