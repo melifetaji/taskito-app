@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeInRight from "../animations/FadeInRight";
 import FadeInLeft from "../animations/FadeInLeft";
-
+import connectMongo from "../../db/connect";
 import { motion } from "framer-motion";
 
 type Props = {};
