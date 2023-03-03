@@ -1,5 +1,5 @@
 import Head from "next/head";
-import LoginLayout from "@/components/layout/LoginLayout";
+import AuthLayout from "@/components/layout/AuthLayout";
 import Link from "next/link";
 import Image from "next/image";
 import { HiAtSymbol, HiFingerPrint } from "react-icons/hi";
@@ -9,7 +9,7 @@ export default function Login() {
 	const [show, setShow] = useState(false);
 
 	return (
-		<LoginLayout>
+		<AuthLayout>
 			<Head>
 				<title>Login</title>
 			</Head>
@@ -81,6 +81,6 @@ export default function Login() {
 					</Link>
 				</p>
 			</section>
-		</LoginLayout>
+		</AuthLayout>
 	);
 }

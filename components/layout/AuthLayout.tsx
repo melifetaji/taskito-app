@@ -4,7 +4,7 @@ type Props = {
 	children?: React.ReactNode;
 };
 
-const LoginLayout = ({ children }: Props) => {
+const AuthLayout = ({ children }: Props) => {
 	return (
 		<div className="flex h-screen bg-blue-400">
 			<div className="m-auto bg-slate-50 rounded-md h-full md:w-3/5 md:h-3/4 grid lg:grid-cols-2">
@@ -21,4 +21,4 @@ const LoginLayout = ({ children }: Props) => {
 	);
 };
 
-export default LoginLayout;
+export default AuthLayout;
