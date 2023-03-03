@@ -18,27 +18,28 @@ export default NextAuth({
 		}),
 		CredentialsProvider({
 			name: "Credentials",
-
 			async authorize(credentials, req) {
-				connectMongo().catch((error) => {
-					error: "Connection failed";
+				await connectMongo().catch((error) => {
+					error: "Connection Failed...!";
 				});
 
-				// Check User Existence
+				// check user existance
 				const result = await Users.findOne({ email: credentials.email });
-
 				if (!result) {
-					throw new Error("No user found");
+					throw new Error("No User Found");
 				}
 
+				// compare()
 				const checkPassword = await compare(
 					credentials.password,
 					result.password
 				);
 
+				// incorrect password
 				if (!checkPassword || result.email !== credentials.email) {
-					throw new Error("Email or password is incorrect");
+					throw new Error("Username or Password doesn't match");
 				}
+
 				return result;
 			},
 		}),
