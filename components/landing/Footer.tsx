@@ -18,6 +18,7 @@ const Footer = (props: Props) => {
 				</footer>
 			</MiddlewareFade>
 		);
+	return null;
 };
 
 export default Footer;
