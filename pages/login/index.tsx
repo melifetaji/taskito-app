@@ -14,9 +14,15 @@ export default function Login() {
 
 	const [show, setShow] = useState(false);
 	const { data: session } = useSession();
+
 	const handleGoogleSignin = async () => {
 		signIn("google", { callbackUrl: `${URL}/dashboard` });
 	};
+
+	const handleGithubSignin = async () => {
+		signIn("github", { callbackUrl: `${URL}/dashboard` });
+	};
+
 	return (
 		<AuthLayout>
 			<Head>
@@ -74,13 +80,17 @@ export default function Login() {
 							className="button-custom"
 							onClick={handleGoogleSignin}
 						>
-							Sign In with Google{" "}
+							Sign In with Google
 							<Image src={"/assets/google.svg"} width="20" height={20} alt="" />
 						</button>
 					</div>
 					<div className="input-button">
-						<button type="button" className="button-custom">
-							Sign In with Github{" "}
+						<button
+							type="button"
+							className="button-custom"
+							onClick={handleGithubSignin}
+						>
+							Sign In with Github
 							<Image src={"/assets/github.svg"} width={25} height={25} alt="" />
 						</button>
 					</div>
