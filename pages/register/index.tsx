@@ -2,7 +2,7 @@ import Head from "next/head";
 import AuthLayout from "@/components/layout/AuthLayout";
 import Link from "next/link";
 import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from "react-icons/hi";
-import { useState } from "react";
+import { getSession } from "next-auth/react";
 
 type Props = {};
 
@@ -91,3 +91,20 @@ const Register = (props: Props) => {
 };
 
 export default Register;
+
+export async function getServerSideProps({ req }: any) {
+	const session = await getSession({ req });
+	if (session) {
+		return {
+			redirect: {
+				destination: "/dashboard",
+				permanent: false,
+			},
+		};
+	}
+	return {
+		props: {
+			session,
+		},
+	};
+}

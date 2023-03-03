@@ -4,10 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { HiAtSymbol, HiFingerPrint } from "react-icons/hi";
 import { useState } from "react";
+import { getSession, useSession, signIn } from "next-auth/react";
 
 export default function Login() {
-	const [show, setShow] = useState(false);
+	const URL =
+		process.env.NODE_ENV === "production"
+			? "https://taskito-app.vercel.app/"
+			: "http://localhost:3000";
 
+	const [show, setShow] = useState(false);
+	const { data: session } = useSession();
+	const handleGoogleSignin = async () => {
+		signIn("google", { callbackUrl: `${URL}/dashboard` });
+	};
 	return (
 		<AuthLayout>
 			<Head>
@@ -60,7 +69,11 @@ export default function Login() {
 						</button>
 					</div>
 					<div className="input-button">
-						<button type="button" className="button-custom">
+						<button
+							type="button"
+							className="button-custom"
+							onClick={handleGoogleSignin}
+						>
 							Sign In with Google{" "}
 							<Image src={"/assets/google.svg"} width="20" height={20} alt="" />
 						</button>
@@ -83,4 +96,20 @@ export default function Login() {
 			</section>
 		</AuthLayout>
 	);
+}
+
+export async function getServerSideProps({ req }: any) {
+	const session = await getSession({ req });
+
+	if (session) {
+		return {
+			redirect: {
+				destination: "/dashboard",
+			},
+		};
+	}
+
+	return {
+		props: { session },
+	};
 }

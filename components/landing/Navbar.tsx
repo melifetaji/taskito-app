@@ -80,7 +80,7 @@ const Navbar = ({ animate }: Props) => {
 						</ul>
 						<div>
 							<Button type="primary" size="medium" hover={true}>
-								<Link href="/" className="px-2 py-1">
+								<Link href="/register" className="px-2 py-1">
 									Get Started &gt;
 								</Link>
 							</Button>
@@ -174,7 +174,7 @@ const Navbar = ({ animate }: Props) => {
 												className="block w-full"
 											>
 												<Link
-													href="/dashboard"
+													href="/register"
 													className="w-full block px-2 py-1 font-normal"
 												>
 													Get Started &gt;
