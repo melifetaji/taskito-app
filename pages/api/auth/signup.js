@@ -28,8 +28,7 @@ export default async function handler(req, res) {
 	} else {
 		res
 			.status(500)
-			.json({ message: "HTTP method not valid only POST Accepted" });
+			.json({ message: "HTTP method not valid only POST Accepted" })
+			.end();
 	}
-
-	res.json({ message: "Why are u here?" });
 }

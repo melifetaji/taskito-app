@@ -18,7 +18,7 @@ export default NextAuth({
 		}),
 		CredentialsProvider({
 			name: "Credentials",
-			async authorize(credentials, req) {
+			async authorize(credentials) {
 				console.log("Starts");
 				await connectMongo().catch((error) => {
 					error: "Connection Failed...!";
@@ -44,4 +44,7 @@ export default NextAuth({
 			},
 		}),
 	],
+	session: {
+		strategy: "jwt",
+	},
 });

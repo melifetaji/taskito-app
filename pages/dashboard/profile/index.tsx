@@ -6,10 +6,8 @@ const Profile = (props: Props) => {
 	return <div>Profile</div>;
 };
 
-
 export async function getServerSideProps(context: any) {
 	const session = await getSession(context);
-	const { resolvedUrl } = context;
 
 	if (!session) {
 		return {
@@ -24,6 +22,5 @@ export async function getServerSideProps(context: any) {
 		props: { session },
 	};
 }
-
 
 export default Profile;
