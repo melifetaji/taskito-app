@@ -79,7 +79,7 @@ const Navbar = ({ animate }: Props) => {
 							</li>
 						</ul>
 						<div>
-							<Button type="primary" size="medium" hover={true}>
+							<Button type="primary" size="medium">
 								<Link href="/register" className="px-2 py-1">
 									Get Started &gt;
 								</Link>
@@ -169,7 +169,6 @@ const Navbar = ({ animate }: Props) => {
 										<li className="flex justify-center mb-4">
 											<Button
 												type="primary"
-												hover={true}
 												size="medium"
 												className="block w-full"
 											>
