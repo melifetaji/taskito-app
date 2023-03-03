@@ -3,10 +3,34 @@ import AuthLayout from "@/components/layout/AuthLayout";
 import Link from "next/link";
 import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from "react-icons/hi";
 import { getSession } from "next-auth/react";
+import { useFormik } from "formik";
+import { register_validate } from "@/lib/validate";
+import { useRouter } from "next/router";
 
 type Props = {};
-
 const Register = (props: Props) => {
+	const router = useRouter();
+
+	const onSubmit = async (values: any) => {
+		const options = {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(values),
+		};
+		await fetch("/api/auth/signup", options)
+			.then((res) => res.json())
+			.then(() => router.push("/login"));
+	};
+	const formik = useFormik({
+		initialValues: {
+			username: "",
+			email: "",
+			password: "",
+			cpassword: "",
+		},
+		validate: register_validate,
+		onSubmit,
+	});
 	return (
 		<div>
 			<Head>
@@ -23,46 +47,73 @@ const Register = (props: Props) => {
 					</div>
 
 					{/* form */}
-					<form className="flex flex-col gap-5">
-						<div className="input-group">
+					<form className="flex flex-col gap-5" onSubmit={formik.handleSubmit}>
+						<div
+							className={`${
+								formik.errors.username && formik.touched.username
+									? "border-rose-500"
+									: ""
+							} input-group`}
+						>
 							<input
 								type="text"
-								name="username"
 								placeholder="Username"
 								className="input-text"
+								{...formik.getFieldProps("username")}
 							/>
 							<span className="icon flex items-center px-4">
 								<HiOutlineUser size={25} />
 							</span>
 						</div>
-						<div className="input-group">
+
+						<div
+							className={`${
+								formik.errors.email && formik.touched.email
+									? "border-rose-500"
+									: ""
+							} input-group`}
+						>
 							<input
 								type="email"
-								name="email"
 								placeholder="Email"
 								className="input-text"
+								{...formik.getFieldProps("email")}
 							/>
 							<span className="icon flex items-center px-4">
 								<HiAtSymbol size={25} />
 							</span>
 						</div>
-						<div className="input-group">
+
+						<div
+							className={`${
+								formik.errors.password && formik.touched.password
+									? "border-rose-500"
+									: ""
+							} input-group`}
+						>
 							<input
 								type="password"
-								name="password"
 								placeholder="Password"
 								className="input-text"
+								{...formik.getFieldProps("password")}
 							/>
 							<span className="icon flex items-center px-4">
 								<HiFingerPrint size={25} />
 							</span>
 						</div>
-						<div className="input-group">
+
+						<div
+							className={`${
+								formik.errors.cpassword && formik.touched.cpassword
+									? "border-rose-500"
+									: ""
+							} input-group`}
+						>
 							<input
 								type="password"
-								name="cpassword"
 								placeholder="Confirm Password"
 								className="input-text"
+								{...formik.getFieldProps("cpassword")}
 							/>
 							<span className="icon flex items-center px-4">
 								<HiFingerPrint size={25} />
@@ -72,7 +123,7 @@ const Register = (props: Props) => {
 						{/* login buttons */}
 						<div className="input-button">
 							<button type="submit" className="button">
-								Login
+								Register
 							</button>
 						</div>
 					</form>

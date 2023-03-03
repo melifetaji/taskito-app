@@ -5,6 +5,9 @@ import Image from "next/image";
 import { HiAtSymbol, HiFingerPrint } from "react-icons/hi";
 import { useState } from "react";
 import { getSession, useSession, signIn } from "next-auth/react";
+import { useFormik } from "formik";
+import { login_validate } from "@/lib/validate";
+import { useRouter } from "next/router";
 
 export default function Login() {
 	const URL =
@@ -13,7 +16,32 @@ export default function Login() {
 			: "http://localhost:3000";
 
 	const [show, setShow] = useState(false);
-	const { data: session } = useSession();
+	const [match, setMatch] = useState(true);
+	const router = useRouter();
+
+	const onSubmit = async (values: any) => {
+		const status = await signIn("credentials", {
+			redirect: false,
+			email: values.email,
+			password: values.password,
+			callbackUrl: `${URL}/dashboard`,
+		});
+
+		if (status?.ok) {
+			router.push("/dashboard");
+		} else {
+			setMatch(false);
+		}
+	};
+
+	const formik = useFormik({
+		initialValues: {
+			email: "",
+			password: "",
+		},
+		validate: login_validate,
+		onSubmit,
+	});
 
 	const handleGoogleSignin = async () => {
 		signIn("google", { callbackUrl: `${URL}/dashboard` });
@@ -41,24 +69,42 @@ export default function Login() {
 				</div>
 
 				{/* form */}
-				<form className="flex flex-col gap-5">
-					<div className="input-group">
+				<form className="flex flex-col gap-5" onSubmit={formik.handleSubmit}>
+					{match ? (
+						<p className="text-sm text-slate-500">Enter Credentials</p>
+					) : (
+						<p className="text-red-500 text-sm">Invalid Credentials</p>
+					)}
+					<div
+						className={`${
+							formik.errors.email && formik.touched.email
+								? "border-rose-500"
+								: ""
+						} input-group`}
+					>
 						<input
 							type="email"
-							name="email"
 							placeholder="Email"
 							className="input-text"
+							{...formik.getFieldProps("email")}
 						/>
 						<span className="icon flex items-center px-4">
 							<HiAtSymbol size={25} />
 						</span>
 					</div>
-					<div className="input-group">
+
+					<div
+						className={`${
+							formik.errors.password && formik.touched.password
+								? "border-rose-500"
+								: ""
+						} input-group`}
+					>
 						<input
 							type={`${show ? "text" : "password"}`}
-							name="password"
 							placeholder="password"
 							className="input-text"
+							{...formik.getFieldProps("password")}
 						/>
 						<span
 							className="icon flex items-center px-4"

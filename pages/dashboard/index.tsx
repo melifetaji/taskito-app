@@ -49,8 +49,8 @@ const Dashboard = (props: Props) => {
 
 export default Dashboard;
 
-export async function getServerSideProps({ req }: any) {
-	const session = await getSession({ req });
+export async function getServerSideProps(context: any) {
+	const session = await getSession(context);
 
 	if (!session) {
 		return {

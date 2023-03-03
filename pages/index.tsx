@@ -7,7 +7,6 @@ import Newsletter from "@/components/landing/Newsletter";
 import Build from "@/components/landing/GetStarted";
 
 export default function Home() {
-	console.log(process.env.NODE_ENV);
 	return (
 		<>
 			<Head>
