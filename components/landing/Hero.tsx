@@ -6,6 +6,7 @@ import FadeInRight from "../animations/FadeInRight";
 import FadeInLeft from "../animations/FadeInLeft";
 
 import { motion } from "framer-motion";
+
 type Props = {};
 
 const Hero = (props: Props) => {
@@ -31,12 +32,13 @@ const Hero = (props: Props) => {
 						animate={{ opacity: 1 }}
 						transition={{ duration: 0.7, delay: 0.3 }}
 					>
-						<Button type="primary" size="large" className="mr-3" hover={true}>
+						<Button type="primary" size="large" className="mr-3">
 							<Link href="/register">Get Started</Link>
 						</Button>
-						<Link href="/about">
-							<Button size="large">Learn More</Button>
-						</Link>
+
+						<Button type="dark" size="large">
+							<Link href="/about">Learn More</Link>
+						</Button>
 					</motion.div>
 				</div>
 				<div className="hidden md:block">

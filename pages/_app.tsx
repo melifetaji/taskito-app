@@ -12,9 +12,9 @@ export default function App({
 	return (
 		<SessionProvider session={session}>
 			<Layout>
-				<PageTransition>
-					<Component {...pageProps} />
-				</PageTransition>
+				{/* <PageTransition> */}
+				<Component {...pageProps} />
+				{/* </PageTransition> */}
 			</Layout>
 		</SessionProvider>
 	);

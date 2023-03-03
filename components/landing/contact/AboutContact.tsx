@@ -13,7 +13,7 @@ const AboutContact = (props: Props) => {
 						<h3 className="text-3xl font-semibold md:text-5xl text-zinc-700">
 							What we can do for your project
 						</h3>
-						<p className="text-lg mt-1 text-zinc-500">
+						<p className="text-lg mt-4 text-zinc-500">
 							Let's explore how Taskito can work for you.
 						</p>
 						<div className="bg-gradient-to-br from-blue-100 to-red-50 p-3 mt-[2em] rounded-md">
@@ -41,48 +41,42 @@ const AboutContact = (props: Props) => {
 						<h1 className="text-3xl font-semibold md:text-5xl text-zinc-700 mb-4">
 							Contact our sales team
 						</h1>
-						<form action="">
-							<div className="flex flex-col mt-3">
-								<label htmlFor="name" className="text-zinc-700">
-									Full Name
-								</label>
+						<form action="" className="space-y-4 mt-10">
+							<div className="input-group">
 								<input
 									required
 									type="text"
 									name="name"
 									id="name"
-									className="border-2 border-zinc-300 p-2 rounded-md focus:border-blue-300"
+									placeholder="Full Name"
+									className="input-text"
 								/>
 							</div>
 
-							<div className="flex flex-col mt-3">
-								<label htmlFor="email" className="text-zinc-700">
-									Email
-								</label>
+							<div className="input-group">
 								<input
 									required
 									type="email"
 									name="email"
 									id="email"
-									className="border-2 border-zinc-300 p-2 rounded-md focus:border-blue-300"
+									placeholder="Email"
+									className="input-text"
 								/>
 							</div>
-							<div className="flex flex-col mt-3">
-								<label htmlFor="message" className="text-zinc-700">
-									Message
-								</label>
+
+							<div className="input-group">
 								<textarea
 									required
 									name="message"
 									id="message"
 									cols={30}
 									rows={4}
-									className="border-2 border-zinc-300 p-2 rounded-md focus:border-blue-300"
-								></textarea>
+									className="input-text"
+									placeholder="Enter Message"
+								/>
 							</div>
-							<button className="bg-zinc-700 text-zinc-100 p-2 rounded-md mt-3 min-w-full hover:bg-gradient-to-r from-blue-600 to-violet-800 ">
-								Submit
-							</button>
+
+							<button className="button">Submit</button>
 						</form>
 					</div>
 				</div>
