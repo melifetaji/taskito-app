@@ -4,11 +4,13 @@ import Layout from "@/components/layout/Layout";
 import PageTransition from "@/components/animations/PageTransition";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <Layout>
-      <PageTransition>
-        <Component {...pageProps} />
-      </PageTransition>
-    </Layout>
-  );
+	return (
+		<Layout>
+			{/* ;#TODO - fix page transition */}
+
+			{/* <PageTransition> */}
+			<Component {...pageProps} />
+			{/* </PageTransition> */}
+		</Layout>
+	);
 }
