@@ -3,7 +3,9 @@ import Users from "../../../model/Schema";
 import { hash } from "bcryptjs";
 
 export default async function handler(req, res) {
-	connectMongo().catch((error) => res.json({ error: "Connection failed" }));
+	await connectMongo().catch((error) =>
+		res.json({ error: "Connection failed" })
+	);
 
 	// only post method is accepted
 	if (req.method === "POST") {
