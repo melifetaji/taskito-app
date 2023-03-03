@@ -189,6 +189,7 @@ const Navbar = ({ animate }: Props) => {
 				</div>
 			</motion.nav>
 		);
+	return null;
 };
 
 export default Navbar;
