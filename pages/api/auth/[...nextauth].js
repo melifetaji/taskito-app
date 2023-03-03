@@ -19,17 +19,17 @@ export default NextAuth({
 		CredentialsProvider({
 			name: "Credentials",
 			async authorize(credentials, req) {
+				console.log("Starts");
 				await connectMongo().catch((error) => {
 					error: "Connection Failed...!";
 				});
-
-				// check user existance
+				console.log("Connects with DB");
 				const result = await Users.findOne({ email: credentials.email });
+				console.log("Gets User");
 				if (!result) {
 					throw new Error("No User Found");
 				}
 
-				// compare()
 				const checkPassword = await compare(
 					credentials.password,
 					result.password

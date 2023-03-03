@@ -20,6 +20,7 @@ export default function Login() {
 	const router = useRouter();
 
 	const onSubmit = async (values: any) => {
+		console.log("COMES ONSUBMIT");
 		const status = await signIn("credentials", {
 			redirect: false,
 			email: values.email,
