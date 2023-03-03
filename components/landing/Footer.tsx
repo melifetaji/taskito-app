@@ -6,7 +6,12 @@ type Props = {};
 
 const Footer = (props: Props) => {
 	const router = useRouter();
-	if (router.route === "/contact") return null;
+	if (
+		router.route === "/contact" ||
+		router.route === "/login" ||
+		router.route === "/register"
+	)
+		return null;
 	return (
 		<MiddlewareFade>
 			<footer className="bg-black py-2 flex bottom-0">

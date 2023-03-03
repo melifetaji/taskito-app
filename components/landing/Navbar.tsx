@@ -6,12 +6,15 @@ import { HiX } from "react-icons/hi";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 type Props = {
 	animate?: boolean;
 };
 
 const Navbar = ({ animate }: Props) => {
+	const router = useRouter();
+	if (router.route === "/login" || router.route === "/register") return null;
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const [scroll, setScroll] = useState<string>("transparent");
 	const menuRef = useRef<HTMLDivElement>(null);

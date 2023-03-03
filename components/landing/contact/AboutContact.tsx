@@ -1,5 +1,8 @@
-import React from 'react';
+import React from "react";
 type Props = {};
+
+// #TODO - style the form
+// #TODO - add map
 
 const AboutContact = (props: Props) => {
 	return (
