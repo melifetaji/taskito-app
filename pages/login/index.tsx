@@ -23,7 +23,7 @@ export default function Login() {
 				<title>Login</title>
 			</Head>
 
-			<section className="w-3/4 mx-auto flex flex-col gap-10">
+			<section className="w-3/4 mx-auto flex flex-col gap-10 h-[100vh] md:h-auto">
 				<div className="title">
 					<h1 className="text-gray-800 text-4xl font-bold py-4">
 						Welcome to Taskito
