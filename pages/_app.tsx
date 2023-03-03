@@ -6,11 +6,9 @@ import PageTransition from "@/components/animations/PageTransition";
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<Layout>
-			{/* ;#TODO - fix page transition */}
-
-			{/* <PageTransition> */}
-			<Component {...pageProps} />
-			{/* </PageTransition> */}
+			<PageTransition>
+				<Component {...pageProps} />
+			</PageTransition>
 		</Layout>
 	);
 }
