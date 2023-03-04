@@ -2,11 +2,14 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
+import clientPromise from "../../../db/client";
 import connectMongo from "../../../db/connect";
 import Users from "../../../model/Schema";
 import { compare } from "bcryptjs";
 
 export default NextAuth({
+	adapter: MongoDBAdapter(clientPromise),
 	providers: [
 		GoogleProvider({
 			clientId: process.env.GOOGLE_CLIENT_ID,
@@ -22,6 +25,7 @@ export default NextAuth({
 				await connectMongo().catch((error) => {
 					error: "Connection Failed...!";
 				});
+
 				const result = await Users.findOne({ email: credentials.email });
 				if (!result) {
 					throw new Error("No User Found");

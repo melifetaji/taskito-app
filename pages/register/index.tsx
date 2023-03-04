@@ -1,14 +1,21 @@
 import Head from "next/head";
 import AuthLayout from "@/components/layout/AuthLayout";
 import Link from "next/link";
-import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from "react-icons/hi";
+import {
+	HiAtSymbol,
+	HiFingerPrint,
+	HiOutlineUser,
+	HiOutlineBadgeCheck,
+} from "react-icons/hi";
 import { getSession } from "next-auth/react";
 import { useFormik } from "formik";
 import { register_validate } from "@/lib/validate";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 type Props = {};
 const Register = (props: Props) => {
+	const [exists, setExists] = useState(false);
 	const router = useRouter();
 
 	const URL =
@@ -23,9 +30,13 @@ const Register = (props: Props) => {
 			body: JSON.stringify(values),
 		};
 
-		await fetch(`${URL}/api/auth/signup`, options)
-			.then((res) => res.json())
-			.then(() => router.push("/login"));
+		await fetch(`${URL}/api/auth/signup`, options).then((res: any) => {
+			if (res.status === 422) {
+				setExists(true);
+			} else {
+				router.push("/login");
+			}
+		});
 	};
 
 	const formik = useFormik({
@@ -52,7 +63,11 @@ const Register = (props: Props) => {
 							officia?
 						</p>
 					</div>
-
+					{exists ? (
+						<p className="text-red-500 text-sm">User Already Exists</p>
+					) : (
+						<p className="text-sm text-slate-500">Enter Credentials</p>
+					)}
 					{/* form */}
 					<form className="flex flex-col gap-5" onSubmit={formik.handleSubmit}>
 						<div
@@ -123,7 +138,7 @@ const Register = (props: Props) => {
 								{...formik.getFieldProps("cpassword")}
 							/>
 							<span className="icon flex items-center px-4">
-								<HiFingerPrint size={25} />
+								<HiOutlineBadgeCheck size={25} />
 							</span>
 						</div>
 
