@@ -57,15 +57,17 @@ export default function Login() {
 				<title>Login</title>
 			</Head>
 
-			<section className="w-3/4 mx-auto flex flex-col gap-10 h-auto">
+			<section className="w-3/4 mx-auto flex flex-col gap-10 md:gap-5 ">
 				<div className="title">
 					<h1 className="text-gray-800 text-4xl font-bold py-4">
-						Welcome to Taskito
+						Welcome back
 					</h1>
-					<p className="w-3/4 mx-auto text-gray-400">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-						officia?
-					</p>
+					<div className="md:hidden">
+						<p className="w-3/4 mx-auto text-gray-400">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+							officia?
+						</p>
+					</div>
 				</div>
 
 				{/* form */}

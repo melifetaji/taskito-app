@@ -18,7 +18,7 @@
 }
 
 .imgStyle{
-  @apply bg-gradient-to-r from-blue-500 to-indigo-500 rounded-l-md relative overflow-hidden;
+  @apply bg-gradient-to-r from-blue-500 to-indigo-500 rounded-none md:rounded-l-md relative overflow-hidden;
 }
 
 .cartoonImg{
@@ -98,7 +98,7 @@
 }
 
 .button-custom{
-  @apply w-full border py-3 flex justify-center gap-2 hover:bg-gray-200;
+  @apply w-full border py-3 flex justify-center gap-2 hover:bg-gray-200 rounded-md;
 }
 
 .input-text + *{
