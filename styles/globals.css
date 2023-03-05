@@ -22,7 +22,7 @@
 }
 
 .cloud_one{
-  animation: cloud_one 18s ease-in  infinite;
+  animation: cloud_one 18s ease-in infinite;
 }
 
 .cloud_two{
@@ -67,7 +67,7 @@
 }
 
 .button-custom{
-  @apply w-full border py-3 flex justify-center gap-2 hover:bg-gray-200;
+  @apply w-full border py-3 flex justify-center gap-2 rounded-md hover:bg-gray-200;
 }
 
 .input-text + *{

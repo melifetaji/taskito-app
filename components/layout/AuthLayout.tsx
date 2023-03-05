@@ -8,7 +8,7 @@ type Props = {
 const AuthLayout = ({ children }: Props) => {
 	return (
 		<div className="flex h-screen bg-blue-400">
-			<div className="m-auto bg-slate-50 rounded-md h-full md:w-3/5 md:h-5/6 lg:h-3/4 grid lg:grid-cols-2">
+			<div className="m-auto bg-slate-50 rounded-md h-full md:w-3/5 md:h-5/6 grid lg:grid-cols-2">
 				<div className="imgStyle">
 					<Image
 						src="/assets/img2.png"
